@@ -11,16 +11,15 @@ const headerStore = useHeaderStore()
         <img src="../assets/homelogo.svg" alt="" />
       </router-link>
       <ul class="headerUl">
-        <li class="headerItem" v-for="item in headerStore.items" :key="item.label">
-          <router-link :to="item.href" class="headerItemText" exact-active-class="activeRoute">{{
-            item.label
-          }}</router-link>
+        <li v-for="item in headerStore.items" :key="item.label">
+          <router-link :to="item.href" class="headerItemText">
+            {{ item.label }}
+          </router-link>
         </li>
       </ul>
     </nav>
   </header>
 </template>
-
 <style scoped>
 .header {
   position: relative;
@@ -50,10 +49,6 @@ const headerStore = useHeaderStore()
   text-decoration: none;
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.activeRoute {
-  background-color: #2a2a2a;
 }
 
 .headerItemText:hover {
