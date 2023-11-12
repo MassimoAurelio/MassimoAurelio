@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # massimoAurelio
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -44,3 +45,21 @@ npm run build
 ```sh
 npm run lint
 ```
+=======
+### Hi there 👋
+
+<!--
+**MassimoAurelio/MassimoAurelio** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+
+Here are some ideas to get you started:
+
+- 🔭 I’m currently working on ...
+- 🌱 I’m currently learning ...
+- 👯 I’m looking to collaborate on ...
+- 🤔 I’m looking for help with ...
+- 💬 Ask me about ...
+- 📫 How to reach me: ...
+- 😄 Pronouns: ...
+- ⚡ Fun fact: ...
+-->
+>>>>>>> d6daa87a3a3ad7886dd9f1c7d2f3bd10daeb2c4b
