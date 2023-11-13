@@ -3,15 +3,30 @@
     padding: 0;
     box-sizing: border-box;
     background-color: #111111;
+    
   }
   
   html, body {
     height: 100%;
   }
+
+  header, .mainContainer {
+    width: 100%;
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+  
+@media (max-width: 768px) {
+  header,
+  .mainContainer {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
   
  
   body {
-  font-family: 'Inter', sans-serif;;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     color: #eee;
   }

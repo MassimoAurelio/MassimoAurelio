@@ -17,20 +17,27 @@ const headerStore = useHeaderStore()
           </router-link>
         </li>
       </ul>
+      <div class="toggleThemeItem">
+        <div class="relative">
+          <button class="toggleThemeButton">
+            <img src="../assets/moon.svg" alt="" />
+          </button>
+        </div>
+      </div>
     </nav>
   </header>
 </template>
 <style scoped>
 .header {
   position: relative;
-  width: 100%;
   height: 70px;
   display: flex;
   justify-content: center;
 }
 
 .headerNav {
-  padding: 10px;
+  width: 100%;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,13 +46,19 @@ const headerStore = useHeaderStore()
 .headerUl {
   display: flex;
   flex-direction: row;
+  
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .headerItemText {
   padding: 20px;
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 14px;
+  font-weight: 600;
+  list-style: 20px;
+  font-style: normal;
   text-decoration: none;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -54,4 +67,13 @@ const headerStore = useHeaderStore()
 .headerItemText:hover {
   color: #e2eee2;
 }
+.toggleThemeButton:hover{
+  color: #e2eee2;
+}
+
+.toggleThemeButton {
+  border: none;
+  cursor: pointer;
+}
+
 </style>
