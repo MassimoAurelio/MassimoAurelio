@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { useHeaderStore } from '../stores/counter'
+import { useThemeStore } from '../stores/counter'
+import moon from '../assets/moon.svg'
+import sun from '../assets/sun.svg'
 
 const headerStore = useHeaderStore()
+const themeStore = useThemeStore()
 </script>
 
 <template>
@@ -19,14 +23,15 @@ const headerStore = useHeaderStore()
       </ul>
       <div class="toggleThemeItem">
         <div class="relative">
-          <button class="toggleThemeButton">
-            <img src="../assets/moon.svg" alt="" />
+          <button class="toggleThemeButton" @click="themeStore.toggleTheme">
+            <img :src="themeStore.theme === 'light' ? sun : moon" alt="" />
           </button>
         </div>
       </div>
     </nav>
   </header>
 </template>
+
 <style scoped>
 .header {
   position: relative;
@@ -46,7 +51,7 @@ const headerStore = useHeaderStore()
 .headerUl {
   display: flex;
   flex-direction: row;
-  
+
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -67,7 +72,7 @@ const headerStore = useHeaderStore()
 .headerItemText:hover {
   color: #e2eee2;
 }
-.toggleThemeButton:hover{
+.toggleThemeButton:hover {
   color: #e2eee2;
 }
 

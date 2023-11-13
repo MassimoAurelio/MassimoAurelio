@@ -26,3 +26,15 @@ export const useMySocialsStore = defineStore('socials', {
     ]
   })
 })
+
+export const useThemeStore = defineStore({
+  id: 'theme',
+  state: () => ({
+    theme: 'light'
+  }),
+  actions: {
+    toggleTheme() {
+      this.theme = this.theme === 'light' ? 'dark' : 'light'
+    }
+  }
+})
