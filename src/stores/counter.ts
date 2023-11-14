@@ -1,7 +1,7 @@
 import {} from 'vue'
 import { defineStore } from 'pinia'
-import linkedIn from '../assets/linkedIn.svg'
-import gitHub from '../assets/github.svg'
+import linkedIn from '../assets/img/linkedIn.svg'
+import gitHub from '../assets/img/github.svg'
 
 export const useHeaderStore = defineStore('header', {
   state: () => ({

@@ -15,27 +15,38 @@
     padding-right: 30%;
   }
   
-@media (max-width: 768px) {
-  header,
-  .mainContainer {
-    padding-left: 5%;
-    padding-right: 5%;
+  @media (max-width: 799px) {
+    .desctopHeader,.mobileHeader,.headerNav
+    .mainContainer {
+      padding-left: 2%;
+      padding-right: 2%;
+    }
   }
-}
-  
  
   body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    color: #eee;
   }
   
 
   a {
     text-decoration: none;
-    color: #b4b4b4;
+    color: #646464; 
   }
   
+  .dark a {
+    color: #b4b4b4; 
+  }
+
+  p {
+    text-decoration: none;
+    color: #646464; 
+  }
+  
+  .dark p {
+    color: #b4b4b4; 
+  }
+
   a:hover {
     text-decoration: underline;
   }

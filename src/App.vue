@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HeaderVue from './components/HeaderElement.vue'
+
 import { useThemeStore } from './stores/counter'
 
 const themeStore = useThemeStore()
@@ -14,13 +15,12 @@ const themeStore = useThemeStore()
 
 <style scoped>
 .light {
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   color: #202020;
 }
 
-.dark * {
+.dark {
   background-color: #111111;
   color: #b4b4b4;
 }
-
 </style>
