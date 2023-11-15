@@ -131,6 +131,7 @@ const socialsStore = useMySocialsStore()
 
   .socials:hover .socialsName {
     color: $light-grey;
+    text-decoration: none;
   }
 }
 
@@ -157,6 +158,7 @@ const socialsStore = useMySocialsStore()
   @extend .flex-column;
   margin-top: 3vh;
   margin-bottom: 3vh;
+  
 
   a {
     color: $light-grey;

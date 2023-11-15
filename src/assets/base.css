@@ -28,14 +28,18 @@
     font-size: 16px;
   }
   
+  
 
   a {
     text-decoration: none;
-    color: #646464; 
+   
   }
   
   .dark a {
     color: #b4b4b4; 
+  }
+  .dark h1 {
+    color: #EEEEEE; 
   }
 
   p {
@@ -44,7 +48,15 @@
   }
   
   .dark p {
-    color: #b4b4b4; 
+    color: #EEEEEE; 
+  }
+
+  .light p{
+    color: #202020;
+  }
+
+  .light a{
+    color: #202020;
   }
 
 
