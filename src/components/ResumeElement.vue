@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useMySocialsStore } from '../stores/counter'
+import { useMySocialsStore } from '../stores/useMySocialsStore'
 
 const socialsStore = useMySocialsStore()
 </script>

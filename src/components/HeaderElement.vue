@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
-import { useHeaderStore } from '../stores/counter'
-import { useThemeStore } from '../stores/counter'
+import { useHeaderStore } from '../stores/useHeaderStore'
+import { useThemeStore } from '../stores/useThemeStore'
 import moon from '../assets/img/moon.svg'
 import sun from '../assets/img/sun.svg'
 import mobileHeader from '../components/MobileHeader.vue'

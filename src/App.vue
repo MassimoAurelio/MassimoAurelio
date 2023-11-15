@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import HeaderVue from './components/HeaderElement.vue'
 
-import { useThemeStore } from './stores/counter'
+import { useThemeStore } from './stores/useThemeStore'
 
 const themeStore = useThemeStore()
 </script>
