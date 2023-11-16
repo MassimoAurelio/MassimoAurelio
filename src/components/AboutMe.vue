@@ -2,8 +2,10 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import MobileAboutMe from './MobileAboutMe.vue'
 import { useMySocialsStore } from '../stores/useMySocialsStore'
+import { useMyCompany } from '../stores/useMyCompany'
 
 const socialsStore = useMySocialsStore()
+const companyStore = useMyCompany()
 
 const windowWidth = ref(window.innerWidth)
 
@@ -64,7 +66,7 @@ const isMobile = computed(() => windowWidth.value <= 800)
         <section class="section">
           <h2 class="h2About">Work</h2>
           <div class="info">
-            <p>4+ years of professional development experience.</p>
+            <p>2+ years of professional development experience.</p>
             <p>
               I started my career teaching others how to code, which I will always be appreciative
               of. Then I worked at a few small local companies.
@@ -73,6 +75,20 @@ const isMobile = computed(() => windowWidth.value <= 800)
               Now I'm a full stack engineer currently working at Hines, one of the largest private
               real estate investors in the world.
             </p>
+            <ul class="company">
+              <li class="companyButtons" v-for="item in companyStore.items" :key="item.label">
+                <a class="a" :href="item.link"
+                  ><div class="companyValue">
+                    <img class="imgCompany" :src="item.imgSrc" alt="" />
+                    <div>
+                      <p>{{ item.position }}</p>
+                      <p>{{ item.label }}</p>
+                    </div>
+                  </div>
+                  <time class="text-secondary" datetime="">{{ item.time }}</time></a
+                >
+              </li>
+            </ul>
           </div>
         </section>
       </div>
@@ -112,11 +128,40 @@ const isMobile = computed(() => windowWidth.value <= 800)
           display: flex;
           flex-direction: column;
           gap: 1rem;
+          .company {
+            display: flex;
+            flex-direction: column;
+            gap: 5vh;
+
+            .companyButtons {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap: 10vh;
+              width: 100%;
+              .a {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: nowrap;
+              }
+
+              .companyValue {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                width: 50px;
+                height: 50px;
+              }
+            }
+          }
           .socials {
             display: flex;
             flex-direction: column;
             gap: 1vh;
-
             .socialsButtons {
               border-width: 2px;
               border-style: solid;
@@ -127,6 +172,7 @@ const isMobile = computed(() => windowWidth.value <= 800)
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+                align-items: center;
               }
             }
           }
