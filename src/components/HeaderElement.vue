@@ -56,7 +56,7 @@ const isMobile = computed(() => windowWidth.value <= 800)
 
   .headerNav {
     width: 100%;
-    padding: 20px;
+    padding: 5%;
     display: flex;
     justify-content: center;
     align-items: center;

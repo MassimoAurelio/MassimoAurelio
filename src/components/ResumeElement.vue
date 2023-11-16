@@ -57,57 +57,6 @@ const socialsStore = useMySocialsStore()
 <style lang="scss" scoped>
 @import '../assets/variables';
 
-.flex {
-  display: flex;
-}
-.flex-row {
-  @extend .flex;
-  flex-direction: row;
-}
-.flex-column {
-  @extend .flex;
-  flex-direction: column;
-}
-
-.fade-in-color {
-  transition: color 0.3s ease;
-}
-
-.mainContainer {
-  position: relative;
-  @extend .flex-column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-
-  &.light a,
-  &.light p,
-  &.light span {
-    color: #eeeeee;
-  }
-
-  @media only screen and (max-width: 800px) {
-    padding-left: 2%;
-    padding-right: 2%;
-  }
-}
-
-.firstContainer {
-  margin-top: 10%;
-  @extend .flex-column;
-  justify-content: flex-start;
-  font-weight: $light-font-weight;
-  width: 100%;
-  padding: 5%;
-}
-
-.seconContainer {
-  @extend .flex;
-  justify-content: center;
-  height: 50%;
-  width: 100%;
-}
-
 .smallInfo {
   color: $light-grey;
   font-weight: $medium-font-weight;
@@ -158,7 +107,6 @@ const socialsStore = useMySocialsStore()
   @extend .flex-column;
   margin-top: 3vh;
   margin-bottom: 3vh;
-  
 
   a {
     color: $light-grey;

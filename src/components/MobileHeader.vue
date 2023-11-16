@@ -49,7 +49,7 @@ const openMenu = () => {
 <style lang="scss" scoped>
 .headerNav {
   width: 100%;
-  padding: 20px;
+  padding: 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,3 +1,6 @@
+@import '../assets/_variables.scss';
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +9,7 @@
   }
   
   html, body {
-    height: 100%;
+    height: 100vh;
   }
 
   header, .mainContainer {
@@ -20,6 +23,12 @@
     .mainContainer {
       padding-left: 2%;
       padding-right: 2%;
+    }
+  }
+
+  @media (max-width: 799px) {
+    .mainContainer {
+      padding: 8%;
     }
   }
  
@@ -63,16 +72,6 @@
   a:hover {
     text-decoration: underline;
   }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  .hide {
-    display: none !important;
-  }
   
 
   img {
@@ -87,9 +86,7 @@
   }
   
 
-  h1, h2, h3, h4, h5, h6, p {
-    margin-bottom: 10px;
-  }
+ 
   
 
   .text-center {
