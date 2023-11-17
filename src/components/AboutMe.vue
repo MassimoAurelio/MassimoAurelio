@@ -80,9 +80,9 @@ const isMobile = computed(() => windowWidth.value <= 800)
                 <a class="a" :href="item.link"
                   ><div class="companyValue">
                     <img class="imgCompany" :src="item.imgSrc" alt="" />
-                    <div>
-                      <p>{{ item.position }}</p>
-                      <p>{{ item.label }}</p>
+                    <div class="workInfo">
+                      <p class="pos">{{ item.position }}</p>
+                      <p class="lab">{{ item.label }}</p>
                     </div>
                   </div>
                   <time class="text-secondary" datetime="">{{ item.time }}</time></a
@@ -104,6 +104,10 @@ const isMobile = computed(() => windowWidth.value <= 800)
 .mainContainer {
   display: flex;
   height: 500vh;
+
+  a:hover {
+    text-decoration: none;
+  }
   .firstContainer {
     display: flex;
     flex-direction: column;
@@ -127,16 +131,21 @@ const isMobile = computed(() => windowWidth.value <= 800)
         .info {
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: 2rem;
           .company {
             display: flex;
             flex-direction: column;
             gap: 5vh;
+            &:hover .companyButtons:not(:hover) {
+              filter: brightness(60%);
+              transition: filter 0.3s ease;
+            }
 
             .companyButtons {
               display: flex;
               flex-direction: row;
               align-items: center;
+              transition: filter 0.3s ease;
               gap: 10vh;
               width: 100%;
               .a {
@@ -152,9 +161,20 @@ const isMobile = computed(() => windowWidth.value <= 800)
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                gap: 10px;
-                width: 50px;
-                height: 50px;
+                gap: 3vh;
+                width: 6vh;
+                height: 7vh;
+
+                .workInfo {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 1vh;
+                  .pos {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+                }
               }
             }
           }
@@ -162,12 +182,18 @@ const isMobile = computed(() => windowWidth.value <= 800)
             display: flex;
             flex-direction: column;
             gap: 1vh;
+            &:hover .socialsButtons:not(:hover) {
+              filter: brightness(60%);
+              transition: filter 0.3s ease;
+            }
             .socialsButtons {
               border-width: 2px;
               border-style: solid;
+              transition: filter 0.3s ease;
               border-color: #373737;
               padding: 4%;
               border-radius: 0.5rem;
+
               .socialsValue {
                 display: flex;
                 flex-direction: row;

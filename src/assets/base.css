@@ -17,6 +17,10 @@
     padding-left: 30%;
     padding-right: 30%;
   }
+
+  a:hover {
+    text-decoration: none;
+  }
   
   @media (max-width: 799px) {
     .desctopHeader,.mobileHeader,.headerNav
