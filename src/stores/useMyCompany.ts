@@ -11,16 +11,16 @@ export const useMyCompany = defineStore('company', {
         link: 'https://ru.101xp.com/',
         imgSrc: xp,
         time: '2021-2022',
-        position: 'Manual QA'
+        position: 'QA MANUAL '
       },
       {
         label: 'Raketa',
         link: 'https://www.raketa.world',
         imgSrc: raketa,
         time: '2022-2022',
-        position: 'Manual QA'
+        position: 'QA MANUAL '
       },
-      { label: 'M1NT', link: '', imgSrc: mint, time: '2022-', position: 'Automation QA' }
+      { label: 'M1NT', link: '', imgSrc: mint, time: '2022-', position: 'QA FULL-STACK ' }
     ]
   })
 })

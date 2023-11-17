@@ -169,8 +169,16 @@ const isMobile = computed(() => windowWidth.value <= 800)
                   display: flex;
                   flex-direction: column;
                   gap: 1vh;
+
+                  .lab {
+                    color: #b4b4b4;
+                    font-weight: 700;
+                  }
                   .pos {
                     white-space: nowrap;
+                    width: 100%;
+                    font-weight: 700;
+                    color: #eee;
                     overflow: hidden;
                     text-overflow: ellipsis;
                   }
@@ -195,6 +203,7 @@ const isMobile = computed(() => windowWidth.value <= 800)
               border-radius: 0.5rem;
 
               .socialsValue {
+                font-weight: 700;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
