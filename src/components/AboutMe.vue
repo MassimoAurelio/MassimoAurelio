@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import MobileAboutMe from './MobileAboutMe.vue'
-import { useMySocialsStore } from '../stores/useMySocialsStore'
-import { useMyCompany } from '../stores/useMyCompany'
+import { useMySocialsStore } from '@/stores/useMySocialsStore'
+import { useMyCompany } from '@/stores/useMyCompany'
+import { usePhotoStore } from '@/stores/usePhotoStore'
 
 const socialsStore = useMySocialsStore()
 const companyStore = useMyCompany()
+const photoStore = usePhotoStore()
 
 const windowWidth = ref(window.innerWidth)
 
@@ -23,11 +25,34 @@ const isMobile = computed(() => windowWidth.value <= 800)
     <div class="firstContainer">
       <div class="firstInfo">
         <h1>About Me</h1>
-        <p>Just a quick glimpse.</p>
+        <p class="just">Just a quick glimpse.</p>
       </div>
-      <div class="imgContainer">
-        <img src="../assets/img/myphoto.jpg" alt="" />
-      </div>
+      <section class="flipping">
+        <div class="imgContainer">
+          <div
+            class="flip-container"
+            v-for="(item, index) in photoStore.items"
+            :key="item.imgSrc"
+            :style="{
+              transform: `rotate(${(index % 2 === 0 ? 1 : -1) * 6}deg)`
+            }"
+          >
+            <div
+              class="flipper"
+              :class="{ flipped: item.isFlipped }"
+              @mouseover="item.isFlipped = true"
+              @mouseleave="item.isFlipped = false"
+            >
+              <div class="front">
+                <img :src="item.imgSrc" alt="img" />
+              </div>
+              <div class="back">
+                <img :src="item.obratka" alt="img" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <div class="about">
         <section class="section">
           <h2 class="h2About">About</h2>
@@ -103,7 +128,11 @@ const isMobile = computed(() => windowWidth.value <= 800)
 @import '../assets/variables';
 .mainContainer {
   display: flex;
-  height: 500vh;
+  height: 200vh;
+
+  p {
+    font-weight: 700;
+  }
 
   a:hover {
     text-decoration: none;
@@ -112,103 +141,160 @@ const isMobile = computed(() => windowWidth.value <= 800)
     display: flex;
     flex-direction: column;
     gap: 5rem;
-    .imgContainer {
-      width: 40vh;
-      height: 40vh;
+
+    .just {
+      color: #b4b4b4;
+      font-weight: 700;
     }
-    .about {
-      display: flex;
-      flex-direction: column;
-      gap: 5rem;
-      .section {
+
+    .flipping {
+      position: relative;
+      .imgContainer {
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
+        position: absolute;
+        width: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .flip-container {
+        display: flex;
+        width: 30vh;
+        height: 20vh;
+        margin-right: 5px;
+        transform: rotate(-5deg);
+      }
+
+      .flipper {
+        width: 100%;
+        height: 50%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+      }
+
+      .flipper.flipped {
+        transform: rotateY(180deg);
+      }
+
+      .front,
+      .back {
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        backface-visibility: hidden;
+      }
+
+      .front {
+        transform: rotateY(0deg);
+        z-index: 2;
+      }
+
+      .back {
+        transform: rotateY(180deg) translate(-10px, 10px);
+        z-index: 1;
+      }
+
+      .flipped {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+  .about {
+    padding-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    .section {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      .h2About {
+        width: 10rem;
+        font-size: 14px;
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
         gap: 2rem;
-        .h2About {
-          width: 10rem;
-          font-size: 14px;
-        }
-        .info {
+        .company {
           display: flex;
           flex-direction: column;
-          gap: 2rem;
-          .company {
+          gap: 5vh;
+          &:hover .companyButtons:not(:hover) {
+            filter: brightness(60%);
+            transition: filter 0.3s ease;
+          }
+
+          .companyButtons {
             display: flex;
-            flex-direction: column;
-            gap: 5vh;
-            &:hover .companyButtons:not(:hover) {
-              filter: brightness(60%);
-              transition: filter 0.3s ease;
+            flex-direction: row;
+            align-items: center;
+            transition: filter 0.3s ease;
+            gap: 10vh;
+            width: 100%;
+            .a {
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              flex-wrap: nowrap;
+              font-weight: 700;
             }
 
-            .companyButtons {
+            .companyValue {
               display: flex;
               flex-direction: row;
               align-items: center;
-              transition: filter 0.3s ease;
-              gap: 10vh;
-              width: 100%;
-              .a {
-                width: 100%;
+              gap: 3vh;
+              width: 6vh;
+              height: 7vh;
+
+              .workInfo {
                 display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: nowrap;
-              }
+                flex-direction: column;
+                gap: 1vh;
 
-              .companyValue {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 3vh;
-                width: 6vh;
-                height: 7vh;
-
-                .workInfo {
-                  display: flex;
-                  flex-direction: column;
-                  gap: 1vh;
-
-                  .lab {
-                    color: #b4b4b4;
-                    font-weight: 700;
-                  }
-                  .pos {
-                    white-space: nowrap;
-                    width: 100%;
-                    font-weight: 700;
-                    color: #eee;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                  }
+                .lab {
+                  color: #b4b4b4;
+                  font-weight: 700;
+                }
+                .pos {
+                  white-space: nowrap;
+                  width: 100%;
+                  font-weight: 700;
+                  color: #eee;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
                 }
               }
             }
           }
-          .socials {
-            display: flex;
-            flex-direction: column;
-            gap: 1vh;
-            &:hover .socialsButtons:not(:hover) {
-              filter: brightness(60%);
-              transition: filter 0.3s ease;
-            }
-            .socialsButtons {
-              border-width: 2px;
-              border-style: solid;
-              transition: filter 0.3s ease;
-              border-color: #373737;
-              padding: 4%;
-              border-radius: 0.5rem;
+        }
+        .socials {
+          display: flex;
+          flex-direction: column;
+          gap: 1vh;
+          &:hover .socialsButtons:not(:hover) {
+            filter: brightness(60%);
+            transition: filter 0.3s ease;
+          }
+          .socialsButtons {
+            border-width: 2px;
+            border-style: solid;
+            transition: filter 0.3s ease;
+            border-color: #373737;
+            padding: 4%;
+            border-radius: 0.5rem;
 
-              .socialsValue {
-                font-weight: 700;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-              }
+            .socialsValue {
+              font-weight: 700;
+              color: #eee;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
             }
           }
         }
