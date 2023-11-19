@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useMySocialsStoreInAboutMe } from '../stores/useMySocialsStore'
+import { useMyCompany } from '@/stores/useMyCompany'
 
 const socialsStore = useMySocialsStoreInAboutMe()
+const companyStore = useMyCompany()
 </script>
 
 <template>
@@ -49,7 +51,34 @@ const socialsStore = useMySocialsStoreInAboutMe()
             </li>
           </ul>
         </section>
-        <section class="thirdSection"></section>
+        <section class="section">
+          <h2 class="h2About">Work</h2>
+          <div class="info">
+            <p>2+ years of professional development experience.</p>
+            <p>
+              I started my career teaching others how to code, which I will always be appreciative
+              of. Then I worked at a few small local companies.
+            </p>
+            <p>
+              Now I'm a full stack engineer currently working at Hines, one of the largest private
+              real estate investors in the world.
+            </p>
+            <ul class="company">
+              <li class="companyButtons" v-for="item in companyStore.items" :key="item.label">
+                <a class="a" :href="item.link"
+                  ><div class="companyValue">
+                    <img class="imgCompany" :src="item.imgSrc" alt="" />
+                    <div class="workInfo">
+                      <p class="pos">{{ item.position }}</p>
+                      <p class="lab">{{ item.label }}</p>
+                    </div>
+                  </div>
+                  <time class="text-secondary" datetime="">{{ item.time }}</time></a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
       </div>
     </div>
   </div>
@@ -59,7 +88,7 @@ const socialsStore = useMySocialsStoreInAboutMe()
 @import '../assets/variables';
 .mainContainer {
   display: flex;
-  height: 500vh;
+  height: 300vh;
   .firstContainer {
     display: flex;
     flex-direction: column;
@@ -74,7 +103,7 @@ const socialsStore = useMySocialsStoreInAboutMe()
     .about {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 4rem;
       .section {
         display: flex;
         flex-direction: column;
@@ -83,6 +112,63 @@ const socialsStore = useMySocialsStoreInAboutMe()
           display: flex;
           flex-direction: column;
           gap: 3vh;
+
+          .company {
+            display: flex;
+            flex-direction: column;
+            gap: 5vh;
+            margin-top: 4%;
+            &:hover .companyButtons:not(:hover) {
+              filter: brightness(60%);
+              transition: filter 0.3s ease;
+            }
+
+            .companyButtons {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              transition: filter 0.3s ease;
+              gap: 10vh;
+              width: 100%;
+              .a {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: nowrap;
+                font-weight: 700;
+              }
+
+              .companyValue {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 3vh;
+                width: 6vh;
+                height: 7vh;
+
+                .workInfo {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 1vh;
+
+                  .lab {
+                    color: #b4b4b4;
+                    font-weight: 700;
+                  }
+                  .pos {
+                    white-space: nowrap;
+                    width: 100%;
+                    font-weight: 700;
+                    color: #eee;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+                }
+              }
+            }
+          }
         }
 
         .socials {
@@ -98,6 +184,8 @@ const socialsStore = useMySocialsStoreInAboutMe()
             border-radius: 0.5rem;
             .socialsValue {
               display: flex;
+              font-weight: 700;
+              color: #eee;
               flex-direction: row;
               justify-content: space-between;
             }
