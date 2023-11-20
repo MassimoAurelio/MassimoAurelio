@@ -13,11 +13,14 @@ const companyStore = useMyCompany()
         <h1>About Me</h1>
         <p>Just a quick glimpse.</p>
       </div>
-
-      <div class="imgContainer">
-        <img src="../assets/img/myphoto.jpg" alt="" />
+      <div class="img">
+        <div class="imgContainer">
+          <img src="../assets/img/cat.png" alt="" />
+        </div>
+        <div class="imgContainer">
+          <img src="../assets/img/cat.png" alt="" />
+        </div>
       </div>
-
       <div class="about">
         <section class="section">
           <h2 class="h2About">About</h2>
@@ -93,9 +96,39 @@ const companyStore = useMyCompany()
     display: flex;
     flex-direction: column;
     gap: 5rem;
-    .imgContainer {
-      width: 40vh;
-      height: 40vh;
+
+    .img {
+      margin-bottom: 8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+
+      .imgContainer {
+        position: absolute;
+        top: 0;
+        width: 25vh;
+        height: 25vh;
+
+        &:first-child {
+          left: 0;
+          z-index: 1;
+
+          img {
+            transform: rotate(-15deg);
+          }
+        }
+
+        &:last-child {
+          right: 0;
+          z-index: 2;
+
+          img {
+            transform: rotate(10deg);
+          }
+        }
+      }
     }
     .h2About {
       font-size: 14px;
