@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
-import xp from '../assets/img/101xp.jpg'
-import raketa from '../assets/img/raketa.png'
-import mint from '../assets/img/mint.jpg'
+import xp from '@/assets/img/101xp.jpg'
+import raketa from '@/assets/img/raketa.png'
+import mint from '@/assets/img/mint.jpg'
 
 export const useMyCompany = defineStore('company', {
   state: () => ({

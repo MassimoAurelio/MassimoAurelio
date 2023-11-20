@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
-import linkedIn from '../assets/img/linkedIn.svg'
-import gitHub from '../assets/img/github.svg'
-import email from '../assets/img/email.svg'
-import youtube from '../assets/img/youtube.svg'
+import linkedIn from '@/assets/img/linkedIn.svg'
+import gitHub from '@/assets/img/github.svg'
+import email from '@/assets/img/email.svg'
+import youtube from '@/assets/img/youtube.svg'
 
 export const useMySocialsStore = defineStore('socials', {
   state: () => ({
