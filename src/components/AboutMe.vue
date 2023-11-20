@@ -119,13 +119,13 @@ const isMobile = computed(() => windowWidth.value <= 800)
       </div>
     </div>
   </div>
-  <div class="mobileHeader" v-else>
+  <div class="mobileAboutMe" v-else>
     <MobileAboutMe />
   </div>
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/variables';
+@import '@/assets/variables';
 .mainContainer {
   display: flex;
   height: 250vh;

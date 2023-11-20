@@ -12,25 +12,23 @@
     height: 100vh;
   }
 
-  header, .mainContainer {
+   header, .mainContainer {
     width: 100%;
     padding-left: 30%;
     padding-right: 30%;
   }
 
   
-  
   @media (max-width: 799px) {
-    .desctopHeader,.mobileHeader,.headerNav
-    .mainContainer {
-      padding-left: 2%;
-      padding-right: 2%;
+    .mobileHeader,.mobileAboutMe{
+      padding-left: 1%;
+      padding-right: 1%;
     }
   }
 
   @media (max-width: 799px) {
     .mainContainer {
-      padding: 8%;
+      padding: 5%;
     }
   }
  

@@ -6,55 +6,46 @@ $medium-font-weight: 500;
 $mainContainerPaddingDesktop: 10%;
 $mainContainerPaddingMobile: 8%;
 
-
 .flex {
-    display: flex;
-  }
-  .flex-row {
-    @extend .flex;
-    flex-direction: row;
-  }
-  .flex-column {
-    @extend .flex;
-    flex-direction: column;
-  }
-  
-  .fade-in-color {
-    transition: color 0.3s ease;
-  }
+  display: flex;
+}
+.flex-row {
+  @extend .flex;
+  flex-direction: row;
+}
+.flex-column {
+  @extend .flex;
+  flex-direction: column;
+}
 
-  .mainContainer {
-    position: relative;
-    @extend .flex-column;
-    align-items: center;
-    height: 100vh;
-  
-    &.light a,
-    &.light p,
-    &.light span {
-      color: #eeeeee;
-    }
-  
-    @media only screen and (max-width: 800px) {
-      padding-left: 2%;
-      padding-right: 2%;
-      
-    }
-  }
+.fade-in-color {
+  transition: color 0.3s ease;
+}
 
+.mainContainer {
+  position: relative;
+  @extend .flex-column;
+  align-items: center;
+  height: 100vh;
 
-  .firstContainer {
-    margin-top: 10%;
-    @extend .flex-column;
-    justify-content: flex-start;
-    font-weight: $light-font-weight;
-    width: 100%;
-    padding: 5%;
+  &.light a,
+  &.light p,
+  &.light span {
+    color: #eeeeee;
   }
-  
-  .seconContainer {
-    @extend .flex;
-    justify-content: center;
-    height: 50%;
-    width: 100%;
-  }
+}
+
+.firstContainer {
+  @extend .flex-column;
+  justify-content: flex-start;
+  font-weight: $light-font-weight;
+  width: 100%;
+  padding-top: 10%;
+}
+
+.seconContainer {
+  @extend .flex;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
+}
