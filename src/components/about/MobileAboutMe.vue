@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useMySocialsStoreInAboutMe } from '../stores/useMySocialsStore'
+import { useMySocialsStore } from '@/stores/useMySocialsStore'
 import { useMyCompany } from '@/stores/useMyCompany'
 
-const socialsStore = useMySocialsStoreInAboutMe()
+const socialsStore = useMySocialsStore()
 const companyStore = useMyCompany()
 </script>
 
@@ -15,10 +15,10 @@ const companyStore = useMyCompany()
       </div>
       <div class="img">
         <div class="imgContainer">
-          <img src="../assets/img/cat.png" alt="" />
+          <img src="@/assets/img/cat.png" alt="" />
         </div>
         <div class="imgContainer">
-          <img src="../assets/img/cat.png" alt="" />
+          <img src="@/assets/img/cat.png" alt="" />
         </div>
       </div>
       <div class="about">
@@ -48,8 +48,9 @@ const companyStore = useMyCompany()
             <li class="socialsButtons" v-for="item in socialsStore.items" :key="item.label">
               <a :href="item.link"
                 ><div class="socialsValue">
-                  <span class="text-xl"><img :src="item.imgSrc" alt="" /></span>{{ item.label }}
-                  <img src="../assets/img/arrow.svg" alt="" /></div
+                  <span class="text-xl"><img :src="item.imgSrc" alt="" /></span>
+                  <p>{{ item.label }}</p>
+                  <img src="@/assets/img/arrow.svg" alt="" /></div
               ></a>
             </li>
           </ul>
@@ -72,8 +73,8 @@ const companyStore = useMyCompany()
                   ><div class="companyValue">
                     <img class="imgCompany" :src="item.imgSrc" alt="" />
                     <div class="workInfo">
-                      <p class="pos">{{ item.position }}</p>
-                      <p class="lab">{{ item.label }}</p>
+                      <p>{{ item.position }}</p>
+                      <p>{{ item.label }}</p>
                     </div>
                   </div>
                   <time class="text-secondary" datetime="">{{ item.time }}</time></a
@@ -88,7 +89,7 @@ const companyStore = useMyCompany()
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/variables';
+@import '@/assets/variables';
 .mainContainer {
   display: flex;
   height: 300vh;
@@ -184,44 +185,34 @@ const companyStore = useMyCompany()
                 .workInfo {
                   display: flex;
                   flex-direction: column;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
                   gap: 1vh;
-
-                  .lab {
-                    color: #b4b4b4;
-                    font-weight: 700;
-                  }
-                  .pos {
-                    white-space: nowrap;
-                    width: 100%;
-                    font-weight: 700;
-                    color: #eee;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                  }
                 }
               }
             }
           }
         }
+      }
 
-        .socials {
-          display: flex;
-          flex-direction: column;
-          gap: 2vh;
+      .socials {
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
 
-          .socialsButtons {
-            border-width: 2px;
-            border-style: solid;
-            border-color: #373737;
-            padding: 4%;
-            border-radius: 0.5rem;
-            .socialsValue {
-              display: flex;
-              font-weight: 700;
-              color: #eee;
-              flex-direction: row;
-              justify-content: space-between;
-            }
+        .socialsButtons {
+          border-width: 2px;
+          border-style: solid;
+          border-color: #373737;
+          padding: 4%;
+          border-radius: 0.5rem;
+          .socialsValue {
+            font-weight: 700;
+            color: #eee;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
           }
         }
       }

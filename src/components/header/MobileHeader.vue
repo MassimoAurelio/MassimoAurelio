@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useHeaderStore } from '../stores/useHeaderStore'
-import { useThemeStore } from '../stores/useThemeStore'
-import moon from '../assets/img/moon.svg'
-import sun from '../assets/img/sun.svg'
+import { useHeaderStore } from '@/stores/useHeaderStore'
+import { useThemeStore } from '@/stores/useThemeStore'
+import moon from '@/assets/img/moon.svg'
+import sun from '@/assets/img/sun.svg'
 
 const headerStore = useHeaderStore()
 const themeStore = useThemeStore()
@@ -18,14 +18,14 @@ const openMenu = () => {
 <template>
   <nav class="headerNav">
     <router-link to="/">
-      <img src="../assets/img/homelogo.svg" alt="" />
+      <img src="@/assets/img/homelogo.svg" alt="" />
     </router-link>
     <div class="rightContent">
       <div class="menuWrapper">
-        <button class="dropBoxButton" @click="openMenu">
-          Menu <img src="../assets/img/plus.svg" alt="" />
+        <button class="dropBoxButton" :class="themeStore.theme" @click="openMenu">
+          Menu <img src="@/assets/img/plus.svg" alt="" />
         </button>
-        <div class="dropBox" v-if="menu">
+        <div class="dropBox" :class="themeStore.theme" v-if="menu">
           <div class="headerUl">
             <a v-for="item in headerStore.items" :key="item.label" class="menu-item">
               <router-link :to="item.href" class="headerItemText">
@@ -68,7 +68,7 @@ const openMenu = () => {
       font-size: 1.1rem;
       line-height: 1.25rem;
       margin-bottom: 5%;
-      margin-top: 5%; 
+      margin-top: 5%;
       text-decoration: none;
       width: 100%;
 
@@ -78,17 +78,21 @@ const openMenu = () => {
     }
   }
 
-  .toggleThemeButton {
-    border: none;
-    outline: none;
-    cursor: pointer;
+  .toggleThemeItem {
+    .relative {
+      .toggleThemeButton {
+        border: none;
+        outline: none;
+        cursor: pointer;
 
-    &:hover {
-      color: #e2eee2;
-    }
+        &:hover {
+          color: #e2eee2;
+        }
 
-    &:focus {
-      outline: none;
+        &:focus {
+          outline: none;
+        }
+      }
     }
   }
 }
@@ -119,6 +123,13 @@ const openMenu = () => {
       background-color: #000000;
       border-radius: 10%;
     }
+    .dropBox.light {
+      background-color: #ffffff;
+    }
+
+    .dropBox.dark {
+      background-color: #000000;
+    }
 
     .dropBoxButton {
       font-size: 17px;
@@ -130,6 +141,14 @@ const openMenu = () => {
       color: #b4b4b4;
       background-color: #111111;
       border: none;
+    }
+    .dropBoxButton.light {
+      background-color: #ffffff;
+      color: #646464;
+    }
+
+    .dropBoxButton.dark {
+      background-color: #111111;
     }
   }
 }

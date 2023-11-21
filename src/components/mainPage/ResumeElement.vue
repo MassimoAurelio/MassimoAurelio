@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useMySocialsStore } from '../stores/useMySocialsStore'
-
+import { useMySocialsStore } from '@/stores/useMySocialsStore'
+import arrow from '@/assets/img/arrow.svg'
 const socialsStore = useMySocialsStore()
 </script>
 
@@ -18,14 +18,16 @@ const socialsStore = useMySocialsStore()
           decoding="async"
           data-nimg="1"
           class="avatar"
-          src="../assets/img/myphoto.jpg"
+          src="@/assets/img/myphoto.jpg"
           style="color: transparent"
         />
         <ul class="mainContainerSocials">
           <li v-for="item in socialsStore.items" :key="item.label">
             <div class="socials">
               <img :src="item.imgSrc" alt="logo" />
-              <a :href="item.link" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+              <a class="socialsName" :href="item.link" target="_blank" rel="noopener noreferrer">{{
+                item.label
+              }}</a>
             </div>
           </li>
         </ul>
@@ -36,12 +38,12 @@ const socialsStore = useMySocialsStore()
       <ul class="links">
         <li class="transition-opacity">
           <a class="arrowImg" target="_blank" href="massimoaureliowork@gmail.com"
-            ><img src="../assets/img/arrow.svg" alt="arrow" /><span>Email me</span></a
+            ><img :src="arrow" alt="arrow" /><span>Email me</span></a
           >
         </li>
         <li class="transition-opacity">
           <router-link class="arrowImg" to="/links">
-            <img src="../assets/img/arrow.svg" alt="arrow" />
+            <img :src="arrow" alt="arrow" />
             <span>More ways to connect</span></router-link
           >
         </li>
@@ -52,7 +54,7 @@ const socialsStore = useMySocialsStore()
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/variables';
+@import '@/assets/variables';
 
 .smallInfo {
   color: $light-grey;

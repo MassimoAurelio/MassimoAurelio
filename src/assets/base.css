@@ -9,6 +9,19 @@
 html,
 body {
   height: 100vh;
+  --background-color: #fcfcfc;
+  --text-color: #202020;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.dropBox {
+  background-color: var(--background-color);
+}
+
+.dropBoxButton {
+  color: var(--text-color);
 }
 
 header,
@@ -65,11 +78,9 @@ p {
   color: #646464;
 }
 
-.light span{
+.light span {
   color: #646464;
 }
-
-
 
 a:hover {
   text-decoration: underline;

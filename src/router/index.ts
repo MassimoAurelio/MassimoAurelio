@@ -7,12 +7,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: () => import('./../components/ResumeElement.vue')
+      component: () => import('@/components/mainPage/ResumeElement.vue')
     },
     {
       path: '/about',
       name: 'About',
-      component: () => import('./../components/AboutMe.vue')
+      component: () => import('@/components/about/AboutMe.vue')
     }
   ]
 })

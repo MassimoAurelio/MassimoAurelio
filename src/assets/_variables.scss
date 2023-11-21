@@ -6,6 +6,97 @@ $medium-font-weight: 500;
 $mainContainerPaddingDesktop: 10%;
 $mainContainerPaddingMobile: 8%;
 
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  .section {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    .h2About {
+      width: 10rem;
+      font-size: 14px;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      .company {
+        display: flex;
+        flex-direction: column;
+        gap: 5vh;
+        &:hover .companyButtons:not(:hover) {
+          filter: brightness(60%);
+          transition: filter 0.3s ease;
+        }
+
+        .companyButtons {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          transition: filter 0.3s ease;
+          gap: 10vh;
+          width: 100%;
+          .a {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+            font-weight: 700;
+          }
+
+          .companyValue {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 3vh;
+            width: 6vh;
+            height: 7vh;
+
+            .workInfo {
+              display: flex;
+              flex-direction: column;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              gap: 1vh;
+            }
+          }
+        }
+      }
+
+      .socials {
+        display: flex;
+        flex-direction: column;
+        gap: 1vh;
+        &:hover .socialsButtons:not(:hover) {
+          filter: brightness(60%);
+          transition: filter 0.3s ease;
+        }
+        .socialsButtons {
+          border-width: 0.5px;
+          border-style: solid;
+          transition: filter 0.3s ease;
+          border: 1px solid #d9d9d9;
+          padding: 4%;
+          border-radius: 0.5rem;
+
+          .socialsValue {
+            font-weight: 700;
+            color: #eee;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
+
 .flex {
   display: flex;
 }
@@ -41,7 +132,7 @@ $mainContainerPaddingMobile: 8%;
   font-weight: $light-font-weight;
   width: 100%;
   padding-top: 10%;
-  font-weight: 700
+  font-weight: 700;
 }
 
 .seconContainer {

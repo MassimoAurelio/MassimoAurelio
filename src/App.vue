@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HeaderVue from '@/components/HeaderElement.vue'
+import HeaderVue from '@/components/header/HeaderElement.vue'
 
 import { useThemeStore } from '@/stores/useThemeStore'
 

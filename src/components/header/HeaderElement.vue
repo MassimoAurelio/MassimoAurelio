@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
-import { useHeaderStore } from '../stores/useHeaderStore'
-import { useThemeStore } from '../stores/useThemeStore'
-import moon from '../assets/img/moon.svg'
-import sun from '../assets/img/sun.svg'
-import mobileHeader from '../components/MobileHeader.vue'
+import { useHeaderStore } from '@/stores/useHeaderStore'
+import { useThemeStore } from '@/stores/useThemeStore'
+import moon from '@/assets/img/moon.svg'
+import sun from '@/assets/img/sun.svg'
+import mobileHeader from '@/components/header/MobileHeader.vue'
 
 const headerStore = useHeaderStore()
 const themeStore = useThemeStore()
@@ -23,7 +23,7 @@ const isMobile = computed(() => windowWidth.value <= 800)
   <header class="desctopHeader" v-if="!isMobile">
     <nav class="headerNav">
       <router-link to="/">
-        <img src="../assets/img/homelogo.svg" alt="" />
+        <img src="@/assets/img/homelogo.svg" alt="" />
       </router-link>
       <ul class="headerUl">
         <li v-for="item in headerStore.items" :key="item.label">
@@ -47,7 +47,7 @@ const isMobile = computed(() => windowWidth.value <= 800)
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/variables';
+@import '@/assets/variables';
 .desctopHeader {
   position: relative;
   height: 70px;
@@ -96,5 +96,4 @@ const isMobile = computed(() => windowWidth.value <= 800)
     }
   }
 }
-
 </style>
