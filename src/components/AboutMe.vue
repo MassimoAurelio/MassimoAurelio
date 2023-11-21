@@ -25,7 +25,7 @@ const isMobile = computed(() => windowWidth.value <= 800)
     <div class="firstContainer">
       <div class="firstInfo">
         <h1>About Me</h1>
-        <p class="just">Just a quick glimpse.</p>
+        <p>Just a quick glimpse.</p>
       </div>
       <section class="flipping">
         <div class="imgContainer">
@@ -81,7 +81,8 @@ const isMobile = computed(() => windowWidth.value <= 800)
               <li class="socialsButtons" v-for="item in socialsStore.items" :key="item.label">
                 <a :href="item.link"
                   ><div class="socialsValue">
-                    <span class="text-xl"><img :src="item.imgSrc" alt="" /></span>{{ item.label }}
+                    <span class="text-xl"><img :src="item.imgSrc" alt="" /></span>
+                    <p>{{ item.label }}</p>
                     <img src="../assets/img/arrow.svg" alt="" /></div
                 ></a>
               </li>
@@ -106,8 +107,8 @@ const isMobile = computed(() => windowWidth.value <= 800)
                   ><div class="companyValue">
                     <img class="imgCompany" :src="item.imgSrc" alt="" />
                     <div class="workInfo">
-                      <p class="pos">{{ item.position }}</p>
-                      <p class="lab">{{ item.label }}</p>
+                      <p>{{ item.position }}</p>
+                      <p>{{ item.label }}</p>
                     </div>
                   </div>
                   <time class="text-secondary" datetime="">{{ item.time }}</time></a
@@ -254,20 +255,9 @@ const isMobile = computed(() => windowWidth.value <= 800)
               .workInfo {
                 display: flex;
                 flex-direction: column;
+                white-space: nowrap;
+                text-overflow: ellipsis;
                 gap: 1vh;
-
-                .lab {
-                  color: #b4b4b4;
-                  font-weight: 700;
-                }
-                .pos {
-                  white-space: nowrap;
-                  width: 100%;
-                  font-weight: 700;
-                  color: #eee;
-                  overflow: hidden;
-                  text-overflow: ellipsis;
-                }
               }
             }
           }

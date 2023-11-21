@@ -7,8 +7,8 @@ const socialsStore = useMySocialsStore()
 <template>
   <div class="mainContainer">
     <div class="firstContainer">
-      <h1 class="nameSurname">Maxim Raikov</h1>
-      <p class="smallInfo">I love write cod</p>
+      <h1>Maxim Raikov</h1>
+      <p>I love write cod</p>
       <div class="myInfo">
         <img
           alt="avatar"
@@ -25,9 +25,7 @@ const socialsStore = useMySocialsStore()
           <li v-for="item in socialsStore.items" :key="item.label">
             <div class="socials">
               <img :src="item.imgSrc" alt="logo" />
-              <a class="socialsName" :href="item.link" target="_blank" rel="noopener noreferrer">{{
-                item.label
-              }}</a>
+              <a :href="item.link" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
             </div>
           </li>
         </ul>
@@ -43,9 +41,8 @@ const socialsStore = useMySocialsStore()
         </li>
         <li class="transition-opacity">
           <router-link class="arrowImg" to="/links">
-            <img src="../assets/img/arrow.svg" alt="arrow" /><span
-              >More ways to connect</span
-            ></router-link
+            <img src="../assets/img/arrow.svg" alt="arrow" />
+            <span>More ways to connect</span></router-link
           >
         </li>
       </ul>
@@ -88,6 +85,8 @@ const socialsStore = useMySocialsStore()
   @extend .flex-row;
   align-items: center;
   margin-bottom: 5%;
+  gap: 5%;
+  font-weight: 700;
 
   .socialsName {
     margin-left: 10%;

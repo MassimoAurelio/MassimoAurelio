@@ -23,4 +23,6 @@ const themeStore = useThemeStore()
   background-color: #111111;
   color: #b4b4b4;
 }
+
+
 </style>

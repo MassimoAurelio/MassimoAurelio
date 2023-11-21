@@ -1,97 +1,95 @@
 @import '../assets/_variables.scss';
 
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-  }
-  
-  html, body {
-    height: 100vh;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-   header, .mainContainer {
-    width: 100%;
+html,
+body {
+  height: 100vh;
+}
 
-    padding-left: 30%;
-    padding-right: 30%;
-  }
+header,
+.mainContainer {
+  width: 100%;
 
-  
-  @media (max-width: 799px) {
-    .mobileHeader,.mobileAboutMe{
-      padding-left: 1%;
-      padding-right: 1%;
-    }
-  }
+  padding-left: 30%;
+  padding-right: 30%;
+}
 
-  @media (max-width: 799px) {
-    .mainContainer {
-      padding: 5%;
-    }
+@media (max-width: 799px) {
+  .mobileHeader,
+  .mobileAboutMe {
+    padding-left: 1%;
+    padding-right: 1%;
   }
- 
-  body {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-  }
-  
-  
+}
 
-  a {
-    text-decoration: none;
-   
+@media (max-width: 799px) {
+  .mainContainer {
+    padding: 5%;
   }
-  
-  .dark a {
-    color: #b4b4b4; 
-  }
-  .dark h1 {
-    color: #EEEEEE; 
-  }
+}
 
-  p {
-    text-decoration: none;
-    color: #646464; 
-  }
-  
-  .dark p {
-    color: #EEEEEE; 
-  }
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
 
-  .light p{
-    color: #646464;
-  }
+a {
+  text-decoration: none;
+}
 
-  .light a{
-    color: #202020;
-  }
+p {
+  text-decoration: none;
+  color: #646464;
+}
+.dark a {
+  color: #b4b4b4;
+}
+.dark h1 {
+  color: #eeeeee;
+}
 
+.dark p {
+  color: #eeeeee;
+}
 
-  a:hover {
-    text-decoration: underline;
-  }
-  
+.light p {
+  color: #646464;
+}
 
-  img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
-  
-  
-  ul, ol {
-    list-style: none;
-  }
+.light a {
+  color: #646464;
+}
+
+.light span{
+  color: #646464;
+}
 
 
-  .text-center {
-    text-align: center;
-  }
-  
 
-  .text-right {
-    text-align: right;
-  }
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
