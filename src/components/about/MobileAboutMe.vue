@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { useMySocialsStore } from '@/stores/useMySocialsStore'
-import { useMyCompany } from '@/stores/useMyCompany'
+import AboutWork from '@/components/about/AboutWork.vue'
+import AboutConnect from '@/components/about/AboutConnect.vue'
 
-const socialsStore = useMySocialsStore()
-const companyStore = useMyCompany()
 </script>
 
 <template>
@@ -36,53 +34,8 @@ const companyStore = useMyCompany()
             </p>
           </div>
         </section>
-        <section class="section">
-          <h2 class="h2About">Connect</h2>
-          <p>
-            Have a question or just want to chat? Feel free to
-            <a class="underline-offset-4 underline" target="_blank" href="mailto:contact@b-r.io"
-              >email me</a
-            >. Try finding me anywhere else at @massimoaurelio
-          </p>
-          <ul class="socials">
-            <li class="socialsButtons" v-for="item in socialsStore.items" :key="item.label">
-              <a :href="item.link"
-                ><div class="socialsValue">
-                  <span class="text-xl"><img :src="item.imgSrc" alt="" /></span>
-                  <p>{{ item.label }}</p>
-                  <img src="@/assets/img/arrow.svg" alt="" /></div
-              ></a>
-            </li>
-          </ul>
-        </section>
-        <section class="section">
-          <h2 class="h2About">Work</h2>
-          <div class="info">
-            <p>2+ years of professional development experience.</p>
-            <p>
-              I started my career teaching others how to code, which I will always be appreciative
-              of. Then I worked at a few small local companies.
-            </p>
-            <p>
-              Now I'm a full stack engineer currently working at Hines, one of the largest private
-              real estate investors in the world.
-            </p>
-            <ul class="company">
-              <li class="companyButtons" v-for="item in companyStore.items" :key="item.label">
-                <a class="a" :href="item.link"
-                  ><div class="companyValue">
-                    <img class="imgCompany" :src="item.imgSrc" alt="" />
-                    <div class="workInfo">
-                      <p>{{ item.position }}</p>
-                      <p>{{ item.label }}</p>
-                    </div>
-                  </div>
-                  <time class="text-secondary" datetime="">{{ item.time }}</time></a
-                >
-              </li>
-            </ul>
-          </div>
-        </section>
+        <AboutConnect />
+        <AboutWork />
       </div>
     </div>
   </div>
