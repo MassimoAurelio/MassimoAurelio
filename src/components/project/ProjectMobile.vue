@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useProjectStore } from '@/stores/useMyCompany'
+import { useProjectStore } from '@/stores/useProjectStore.ts'
 
 const projectStore = useProjectStore()
 </script>
@@ -15,7 +15,6 @@ const projectStore = useProjectStore()
             ><div class="companyValue">
               <img class="imgCompany" :src="item.imgSrc" alt="" />
               <div class="workInfo">
-                <p>{{ item.position }}</p>
                 <p>{{ item.label }}</p>
               </div>
             </div>
