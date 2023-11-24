@@ -9,6 +9,7 @@ export const useProjectStore = defineStore('project', {
       {
         label: 'VALORANT',
         link: '/valorant',
+        gitHub: 'https://github.com/MassimoAurelio/MassimoAurelio.git',
         imgSrc: valorant,
         time: '2023',
         description:
@@ -27,7 +28,8 @@ export const useProjectStore = defineStore('project', {
         link: 'https://github.com/MassimoAurelio/MassimoAurelio',
         imgSrc: massimo,
         time: '2023',
-        description:'A web application for the competitive game VALORANT, utilizing the API at https://dash.valorant-api.com.'
+        description:
+          'A web application for the competitive game VALORANT, utilizing the API at https://dash.valorant-api.com.'
       }
     ]
   })
