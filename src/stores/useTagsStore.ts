@@ -1,8 +1,7 @@
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
 
 export const useTagsStore = defineStore('tags', {
   state: () => ({
-   
     items: [
       { name: 'Vue.js' },
       { name: 'TypeScript' },
@@ -12,4 +11,4 @@ export const useTagsStore = defineStore('tags', {
       { name: 'JavaScript' }
     ]
   })
-});
+})

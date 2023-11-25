@@ -21,7 +21,7 @@ export const useProjectStore = defineStore('project', {
         imgSrc: crypto,
         time: '2023',
         description:
-          'A web application for the competitive game VALORANT, utilizing the API at https://dash.valorant-api.com.'
+          'crypto project'
       },
       {
         label: 'MASSIMO CV',
@@ -29,7 +29,7 @@ export const useProjectStore = defineStore('project', {
         imgSrc: massimo,
         time: '2023',
         description:
-          'A web application for the competitive game VALORANT, utilizing the API at https://dash.valorant-api.com.'
+          'My cv'
       }
     ]
   })
