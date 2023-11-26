@@ -23,6 +23,7 @@ export const useProjectStore = defineStore('project', {
         description:
           'crypto project'
       },
+      
       {
         label: 'MASSIMO CV',
         link: 'https://github.com/MassimoAurelio/MassimoAurelio',
