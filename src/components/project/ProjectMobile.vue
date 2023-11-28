@@ -9,6 +9,7 @@ const projectStore = useProjectStore()
     <div class="firstContainer">
       <h1>Projects</h1>
       <div class="q">
+
         <p>Here are some of the projects I've worked on.</p>
         <ul class="project">
           <li class="projectButtons" v-for="item in projectStore.items" :key="item.label">
@@ -33,6 +34,7 @@ const projectStore = useProjectStore()
 
 <style lang="scss" scoped>
 @import '@/assets/variables';
+
 .mainContainer {
   height: 200vh;
   p {
