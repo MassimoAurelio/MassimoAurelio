@@ -20,7 +20,9 @@ const valorantValue = computed(() => {
         <div class="block">
           <div class="smallBlock">
             <p>{{ valorantValue.time }}</p>
+
             <span>·</span>
+            
             <a :href="valorantValue.gitHub">Visit Project</a>
           </div>
           <h1>{{ valorantValue.label }}</h1>

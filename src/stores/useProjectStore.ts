@@ -9,6 +9,7 @@ export const useProjectStore = defineStore('project', {
       {
         label: 'VALORANT',
         link: '/valorant',
+        
         gitHub: 'https://github.com/MassimoAurelio/MassimoAurelio.git',
         imgSrc: valorant,
         time: '2023',
