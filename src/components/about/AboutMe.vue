@@ -53,7 +53,7 @@ const isMobile = computed(() => windowWidth.value <= 800)
 @import '@/assets/variables';
 .mainContainer {
   display: flex;
-  height: 250vh;
+  height: auto;
 
   p {
     font-weight: 700;

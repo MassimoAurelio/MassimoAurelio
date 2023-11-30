@@ -9,7 +9,9 @@ const themeStore = useThemeStore()
 <template>
   <div :class="themeStore.theme">
     <HeaderVue />
-    <router-view></router-view>
+    <transition name="slide-in-up">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -24,5 +26,21 @@ const themeStore = useThemeStore()
   color: #b4b4b4;
 }
 
+.slide-in-up-enter-active {
+  transition: transform 0.5s ease-out;
+}
 
+.slide-in-up-leave-active {
+  transition: transform 0.5s ease-in;
+}
+
+.slide-in-up-enter-from,
+.slide-in-up-leave-to {
+  transform: translateY(3%);
+}
+
+.slide-in-up-enter-to,
+.slide-in-up-leave-from {
+  transform: translateY(0);
+}
 </style>

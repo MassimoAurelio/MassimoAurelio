@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import AboutWork from '@/components/about/AboutWork.vue'
 import AboutConnect from '@/components/about/AboutConnect.vue'
-
 </script>
 
 <template>
@@ -45,11 +44,15 @@ import AboutConnect from '@/components/about/AboutConnect.vue'
 @import '@/assets/variables';
 .mainContainer {
   display: flex;
-  height: 300vh;
+
   .firstContainer {
     display: flex;
     flex-direction: column;
     gap: 5rem;
+
+    .about {
+      margin-top: 10%;
+    }
 
     .img {
       margin-bottom: 8rem;

@@ -38,6 +38,7 @@ const photoStore = usePhotoStore()
 
 .flipping {
   position: relative;
+  margin-bottom: 20%;
   .imgContainer {
     display: flex;
     flex-direction: row;
