@@ -118,7 +118,7 @@ const openMenu = () => {
       position: absolute;
       top: 100%;
       width: 10rem;
-      height: 10rem;
+      height: auto;
       z-index: 1;
       background-color: #000000;
       border-radius: 10%;

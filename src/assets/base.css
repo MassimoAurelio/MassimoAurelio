@@ -10,7 +10,6 @@ html,
 body {
   --background-color: #fcfcfc;
   --text-color: #202020;
-
   background-color: var(--background-color);
   color: var(--text-color);
 }

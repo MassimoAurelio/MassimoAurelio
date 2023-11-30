@@ -47,11 +47,6 @@ $mainContainerPaddingMobile: 8%;
             flex-wrap: nowrap;
             font-weight: 700;
           }
-
-          
-
-
-          
           .companyValue {
             display: flex;
             flex-direction: row;
@@ -121,7 +116,8 @@ $mainContainerPaddingMobile: 8%;
   position: relative;
   @extend .flex-column;
   align-items: center;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
 
   &.light a,
   &.light p,

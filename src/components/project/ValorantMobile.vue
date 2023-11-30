@@ -57,7 +57,7 @@ const valorantValue = computed(() => {
 <style lang="scss" scoped>
 @import '@/assets/variables';
 .mainContainer {
-  height: auto;
+
   p {
     color: #6e6e6e;
   }

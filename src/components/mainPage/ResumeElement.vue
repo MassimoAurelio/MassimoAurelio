@@ -33,7 +33,12 @@ const socialsStore = useMySocialsStore()
         </ul>
       </div>
       <div class="description">
-        <p>Hi, I'm Maxim Raikov, a software engineer who loves building cool things with code.</p>
+        <p>
+          Welcome to our site! I'm Maxim Raikov, your web development and testing guide based in
+          Irkutsk, Russia. As a QA Fullstack professional shifting towards Vue 3 frontend
+          development, discover updates on achievements and web development insights. Thank you for
+          your interest – welcome to the coding world!
+        </p>
       </div>
       <ul class="links">
         <li class="transition-opacity">

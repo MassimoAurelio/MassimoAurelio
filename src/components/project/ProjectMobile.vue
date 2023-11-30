@@ -37,8 +37,6 @@ const projectStore = useProjectStore()
 @import '@/assets/variables';
 
 .mainContainer {
-  height: auto;
-  min-height: 100vh;
 
   .firstContainer {
     display: flex;

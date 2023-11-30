@@ -44,6 +44,7 @@ import AboutConnect from '@/components/about/AboutConnect.vue'
 @import '@/assets/variables';
 .mainContainer {
   display: flex;
+  
 
   .firstContainer {
     display: flex;
