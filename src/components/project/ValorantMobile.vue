@@ -22,7 +22,7 @@ const valorantValue = computed(() => {
             <p>{{ valorantValue.time }}</p>
 
             <span>·</span>
-            
+
             <a :href="valorantValue.gitHub">Visit Project</a>
           </div>
           <h1>{{ valorantValue.label }}</h1>
@@ -42,7 +42,7 @@ const valorantValue = computed(() => {
           </button>
         </div>
       </div>
-      <div>
+      <div class="contact">
         <h2>Contacts</h2>
         <p>
           Need more project details, or interested in working together? Reach out to me directly at
@@ -57,7 +57,7 @@ const valorantValue = computed(() => {
 <style lang="scss" scoped>
 @import '@/assets/variables';
 .mainContainer {
-  height: 261vh;
+  height: auto;
   p {
     color: #6e6e6e;
   }
@@ -89,7 +89,7 @@ const valorantValue = computed(() => {
       position: relative;
       display: flex;
       flex-direction: column;
-      gap: 3vh;
+      gap: 4vh;
       .tags {
         display: flex;
         flex-wrap: wrap;
@@ -109,6 +109,11 @@ const valorantValue = computed(() => {
       flex-direction: column;
       gap: 3vh;
       width: 100%;
+    }
+    .contact {
+      display: flex;
+      flex-direction: column;
+      gap: 4vh;
     }
   }
 }

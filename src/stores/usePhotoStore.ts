@@ -12,7 +12,7 @@ export const usePhotoStore = defineStore({
     items: [
       { imgSrc: myphoto, obratka: obratka, isFlipped: false },
       { imgSrc: cat1, obratka: obratka, isFlipped: false },
-      { imgSrc: sasha, obratka: obratka, isFlipped: false },
+      { imgSrc: cat1, obratka: obratka, isFlipped: false },
       { imgSrc: misa, obratka: obratka, isFlipped: false }
     ] as Photo[]
   })

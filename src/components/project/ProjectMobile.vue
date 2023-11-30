@@ -7,10 +7,11 @@ const projectStore = useProjectStore()
 <template>
   <div class="mainContainer">
     <div class="firstContainer">
-      <h1>Projects</h1>
-      <div class="q">
-
+      <div class="upContent">
+        <h1>Projects</h1>
         <p>Here are some of the projects I've worked on.</p>
+      </div>
+      <div class="projectContent">
         <ul class="project">
           <li class="projectButtons" v-for="item in projectStore.items" :key="item.label">
             <div class="projectValue">
@@ -36,31 +37,40 @@ const projectStore = useProjectStore()
 @import '@/assets/variables';
 
 .mainContainer {
-  height: 200vh;
-  p {
-    color: #6e6e6e;
-  }
-  .q {
+  height: auto;
+  min-height: 100vh;
+
+  .firstContainer {
     display: flex;
     flex-direction: column;
-    gap: 10vh;
-
-    .project {
+    gap: 4vh;
+    p {
+      color: #6e6e6e;
+    }
+    .projectContent {
       display: flex;
       flex-direction: column;
-      gap: 7vh;
+      gap: 10vh;
 
-      .projectValue {
+      .project {
         display: flex;
         flex-direction: column;
-        gap: 2vh;
-      }
+        gap: 7vh;
 
-      .underImg {
-        display: flex;
-        flex-direction: row;
-        gap: 1vh;
+        .projectValue {
+          display: flex;
+          flex-direction: column;
+          gap: 2vh;
+        }
+
+        .underImg {
+          display: flex;
+          flex-direction: row;
+          gap: 1vh;
+        }
       }
+    }
+    .upContent {
     }
   }
 }
