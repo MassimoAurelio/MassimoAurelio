@@ -22,6 +22,11 @@ const router = createRouter({
       path: '/valorant',
       name: 'Valorant',
       component: () => import('@/components/project/ValorantMobile.vue')
+    },
+    {
+      path: '/links',
+      name: 'Links',
+      component: () => import('@/components/about/MoreToConnect.vue')
     }
   ]
 })

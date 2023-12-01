@@ -49,7 +49,7 @@ const socialsStore = useMySocialsStore()
         <li class="transition-opacity">
           <router-link class="arrowImg" to="/links">
             <img :src="arrow" alt="arrow" />
-            <span>More ways to connect</span></router-link
+            <span> <a href="/links">More ways to connect</a></span></router-link
           >
         </li>
       </ul>
