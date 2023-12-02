@@ -13,6 +13,7 @@ const menu = ref(false)
 const openMenu = () => {
   menu.value = !menu.value
 }
+
 </script>
 
 <template>
@@ -22,7 +23,13 @@ const openMenu = () => {
     </router-link>
     <div class="rightContent">
       <div class="menuWrapper">
-        <button class="dropBoxButton" :class="themeStore.theme" @click="openMenu">
+        <button
+          class="dropBoxButton"
+          :class="themeStore.theme"
+          
+          @click="openMenu"
+          
+        >
           Menu <img src="@/assets/img/plus.svg" alt="" />
         </button>
         <div class="dropBox" :class="themeStore.theme" v-if="menu">
@@ -35,12 +42,12 @@ const openMenu = () => {
           </div>
         </div>
       </div>
-      <div class="toggleThemeItem">
-        <div class="relative">
-          <button class="toggleThemeButton" @click="themeStore.toggleTheme">
-            <img :src="themeStore.theme === 'light' ? sun : moon" alt="" />
-          </button>
-        </div>
+    </div>
+    <div class="toggleThemeItem">
+      <div class="relative">
+        <button class="toggleThemeButton" @click="themeStore.toggleTheme">
+          <img :src="themeStore.theme === 'light' ? sun : moon" alt="" />
+        </button>
       </div>
     </div>
   </nav>

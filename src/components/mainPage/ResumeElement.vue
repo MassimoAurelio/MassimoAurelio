@@ -13,7 +13,7 @@ const socialsStore = useMySocialsStore()
         <img
           alt="avatar"
           loading="lazy"
-          width="100"
+          width="130"
           height="100"
           decoding="async"
           data-nimg="1"
@@ -69,8 +69,8 @@ const socialsStore = useMySocialsStore()
 .myInfo {
   @extend .flex-row;
   font-weight: $light-font-weight;
-  margin-top: 3vh;
-  margin-bottom: 3vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
 .mainContainerSocials {

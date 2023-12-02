@@ -3,6 +3,8 @@ import linkedIn from '@/assets/img/linkedIn.svg'
 import gitHub from '@/assets/img/github.svg'
 import email from '@/assets/img/email.svg'
 import youtube from '@/assets/img/youtube.svg'
+import codewars from '@/assets/img/codewars.svg'
+import telegram from '@/assets/img/telegram.svg'
 
 export const useMySocialsStore = defineStore('socials', {
   state: () => ({
@@ -12,6 +14,16 @@ export const useMySocialsStore = defineStore('socials', {
         label: 'GitHub',
         link: 'https://github.com/MassimoAurelio',
         imgSrc: gitHub
+      },
+      {
+        label: 'CodeWars',
+        link: 'https://www.codewars.com/users/MassimoAurelio',
+        imgSrc: codewars
+      },
+      {
+        label: 'Telegram',
+        link: 'https://t.me/massimoaurelio',
+        imgSrc: telegram
       }
     ]
   })
