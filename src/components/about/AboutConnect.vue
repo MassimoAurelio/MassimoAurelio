@@ -10,7 +10,7 @@ const socialsStore = useMySocialsStore()
     <div class="info">
       <p>
         Have a question or just want to chat? Feel free to
-        <a class="underline-offset-4 underline" target="_blank" href="mailto:contact@b-r.io"
+        <a class="underline-offset-4 underline" href="mailto:massimoaureliowork@gmail.com"
           >email me</a
         >. Try finding me anywhere else at @massimoaurelio
       </p>

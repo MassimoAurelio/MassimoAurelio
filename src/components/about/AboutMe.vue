@@ -33,10 +33,7 @@ const isMobile = computed(() => windowWidth.value <= 800)
               I have a passion for design and am always looking for ways to incorporate it into my
               engineering work.
             </p>
-            <p>
-              When I'm not at my desk I am probably lifting weights, playing soccer, or at a coffee
-              shop :)
-            </p>
+           
           </div>
         </section>
         <AboutConnect />

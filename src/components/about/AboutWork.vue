@@ -8,14 +8,17 @@ const companyStore = useMyCompany()
   <section class="section">
     <h2 class="h2About">Work</h2>
     <div class="info">
-      <p>2+ years of professional development experience.</p>
+      <p>2+ years of professional experience.</p>
       <p>
-        I started my career teaching others how to code, which I will always be appreciative of.
-        Then I worked at a few small local companies.
+        An Auto QA engineer, embarked on his professional journey in game development before
+        successfully transitioning to web development.
       </p>
       <p>
-        Now I'm a full stack engineer currently working at Hines, one of the largest private real
-        estate investors in the world.
+        I began my professional journey in the field of gamedev, starting as a junior manual QA
+        engineer. Subsequently, I successfully requalified into web development, a transition that
+        brought me great satisfaction. Since the beginning of this year, I have held the position of
+        full-stack QA, engaging in both manual and automated testing. Currently, I am actively
+        pursuing further studies in web development. <a href="/stack">Learn more about the stack</a>
       </p>
       <ul class="company">
         <li class="companyButtons" v-for="item in companyStore.items" :key="item.label">

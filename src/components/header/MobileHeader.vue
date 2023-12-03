@@ -13,7 +13,6 @@ const menu = ref(false)
 const openMenu = () => {
   menu.value = !menu.value
 }
-
 </script>
 
 <template>
@@ -23,13 +22,7 @@ const openMenu = () => {
     </router-link>
     <div class="rightContent">
       <div class="menuWrapper">
-        <button
-          class="dropBoxButton"
-          :class="themeStore.theme"
-          
-          @click="openMenu"
-          
-        >
+        <button class="dropBoxButton" :class="themeStore.theme" @click="openMenu">
           Menu <img src="@/assets/img/plus.svg" alt="" />
         </button>
         <div class="dropBox" :class="themeStore.theme" v-if="menu">
@@ -128,7 +121,7 @@ const openMenu = () => {
       height: auto;
       z-index: 1;
       background-color: #000000;
-      border-radius: 10%;
+      border-radius: 10px;
     }
     .dropBox.light {
       background-color: #ffffff;

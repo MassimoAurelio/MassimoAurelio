@@ -27,6 +27,11 @@ const router = createRouter({
       path: '/links',
       name: 'Links',
       component: () => import('@/components/about/MoreToConnect.vue')
+    },
+    {
+      path: '/stack',
+      name: 'Stack',
+      component: () => import('@/components/stack/MyStack.vue')
     }
   ]
 })
