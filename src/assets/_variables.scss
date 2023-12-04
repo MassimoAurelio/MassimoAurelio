@@ -141,3 +141,22 @@ $mainContainerPaddingMobile: 8%;
   height: 50%;
   width: 100%;
 }
+
+.tagsContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2vh;
+    .tagsButton {
+      padding: 1vh;
+      border: none;
+      border-radius: 7px;
+      flex-basis: calc(33.33% - 20px);
+    }
+  }
+}

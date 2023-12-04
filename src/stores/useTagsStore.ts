@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import pinia from '@/assets/img/pinia.svg'
 import html from '@/assets/img/html.svg'
 import ts from '@/assets/img/ts.svg'
 import scss from '@/assets/img/scss.svg'
@@ -18,3 +17,5 @@ export const useTagsStore = defineStore('tags', {
     ]
   })
 })
+
+
