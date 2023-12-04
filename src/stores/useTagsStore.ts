@@ -13,7 +13,8 @@ export const useTagsStore = defineStore('tags', {
       { name: 'SCSS', imgSrc: scss },
       { name: 'CSS' },
       { name: 'HTML', imgSrc: html },
-      { name: 'JavaScript', imgSrc: js }
+      { name: 'JavaScript', imgSrc: js },
+      { name: 'Pinia', imgSrc: js }
     ]
   })
 })

@@ -55,6 +55,11 @@ const autoStore = useAutomationStore()
   .firstContainer {
     @extend .flex-column;
     gap: 3vh;
+
+    .description {
+      @extend .flex-column;
+      gap: 2vh;
+    }
     .stack {
       @extend .flex-column;
       justify-content: flex-start;

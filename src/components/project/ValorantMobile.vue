@@ -57,7 +57,6 @@ const valorantValue = computed(() => {
 <style lang="scss" scoped>
 @import '@/assets/variables';
 .mainContainer {
-
   p {
     color: #6e6e6e;
   }
@@ -113,7 +112,7 @@ const valorantValue = computed(() => {
     .contact {
       display: flex;
       flex-direction: column;
-      gap: 4vh;
+      gap: 2vh;
     }
   }
 }

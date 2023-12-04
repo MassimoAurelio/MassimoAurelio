@@ -13,6 +13,10 @@ const menu = ref(false)
 const openMenu = () => {
   menu.value = !menu.value
 }
+
+const closeMenu = () => {
+  menu.value = false
+}
 </script>
 
 <template>
@@ -25,7 +29,7 @@ const openMenu = () => {
         <button class="dropBoxButton" :class="themeStore.theme" @click="openMenu">
           Menu <img src="@/assets/img/plus.svg" alt="" />
         </button>
-        <div class="dropBox" :class="themeStore.theme" v-if="menu">
+        <div class="dropBox" :class="themeStore.theme" v-if="menu" v-click-outside="closeMenu">
           <div class="headerUl">
             <a v-for="item in headerStore.items" :key="item.label" class="menu-item">
               <router-link :to="item.href" class="headerItemText">
